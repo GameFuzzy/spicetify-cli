@@ -28,7 +28,7 @@ jobs:
           npm install
           npm run build
 
-      - uses: nwtgck/actions-netlify@v1.2
+      - uses: nwtgck/actions-netlify@v1.2.2
         with:
           publish-dir: './docs/build'
           deploy-message: "Prod deploy v${{ github.ref }}"
