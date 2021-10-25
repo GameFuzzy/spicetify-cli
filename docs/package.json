@@ -1,5 +1,5 @@
 {
-  "name": "spicetify-cli-docs",
+  "name": "spicetify-cli",
   "version": "2.7.1",
   "description": "Documentation for spicetify-cli",
   "scripts": {
