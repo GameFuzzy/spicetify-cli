@@ -4,3 +4,4 @@ bin/
 docs/build/
 **/node_modules/
 **/.netlify/
+**/package-lock.json
