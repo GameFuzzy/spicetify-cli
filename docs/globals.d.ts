@@ -278,17 +278,17 @@ declare namespace Spicetify {
             headers: Headers;
             status: number;
             uri: string;
-            static isSuccessStatus(status: number): boolean;
+            isSuccessStatus(status: number): boolean;
         }
 
         function head(url: string, headers?: Headers): Promise<Headers>;
-        function get(url: string, body?: Body, headers?: Headers): Promise<Response.body>;
-        function post(url: string, body?: Body, headers?: Headers): Promise<Response.body>;
-        function put(url: string, body?: Body, headers?: Headers): Promise<Response.body>;
-        function del(url: string, body?: Body, headers?: Headers): Promise<Response.body>;
-        function patch(url: string, body?: Body, headers?: Headers): Promise<Response.body>;
-        function sub(url: string, callback: ((b: Response.body) => void), onError?: ((e: Error) => void), body?: Body, headers?: Headers): Promise<Response.body>;
-        function postSub(url: string, body?: Body, callback: ((b: Response.body) => void), onError?: ((e: Error) => void)): Promise<Response.body>;
+        function get(url: string, body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function post(url: string, body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function put(url: string, body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function del(url: string, body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function patch(url: string, body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function sub(url: string, callback: ((b: Response.body) => void), onError?: ((e: Error) => void), body?: Body, headers?: Headers): Promise<typeof CosmosAsync.Response.body>;
+        function postSub(url: string, body?: Body, callback: ((b: Response.body) => void), onError?: ((e: Error) => void)): Promise<typeof CosmosAsync.Response.body>;
         function request(method: Method, url: string, body?: Body, headers?: Headers): Promise<Response>;
         function resolve(method: Method, url: string, body?: Body, headers?: Headers): Promise<Response>;
     }
@@ -1244,18 +1244,18 @@ declare namespace Spicetify {
             /**
              * The menu UI to render inside of the context menu.
              */
-            menu: Spicetify.ReactComponent.Menu |
-                Spicetify.ReactComponent.AlbumMenu |
-                Spicetify.ReactComponent.PodcastShowMenu |
-                Spicetify.ReactComponent.ArtistMenu |
-                Spicetify.ReactComponent.PlaylistMenu;
+            menu: typeof Spicetify.ReactComponent.Menu |
+                typeof Spicetify.ReactComponent.AlbumMenu |
+                typeof Spicetify.ReactComponent.PodcastShowMenu |
+                typeof Spicetify.ReactComponent.ArtistMenu |
+                typeof Spicetify.ReactComponent.PlaylistMenu;
             /**
              * A child of the context menu. Should be `<button>`, `<a>`,
              * a custom react component that forwards a ref to a `<button>` or `<a>`,
              * or a function. If a function is passed it will be called with
              * (`isOpen`, `handleContextMenu`, `ref`) as arguments.
              */
-            children: ContextMenuChildren;
+            children: typeof ContextMenuChildren;
         };
         type MenuProps = {
             /**
@@ -1272,7 +1272,7 @@ declare namespace Spicetify {
             /**
              * Function that runs when `MenuItem` is clicked
              */
-            onClick?: React.MouseEventHandler<HTMLButtonElement>;
+            onClick?: () => void;
             /**
              * Indicates if `MenuItem` is disabled. Disabled items will not cause
              * the `Menu` to close when clicked.
@@ -1285,7 +1285,7 @@ declare namespace Spicetify {
             /**
              * React component icon that will be rendered at the end of the `MenuItem`
              */
-            icon?: React.ReactNode;
+            icon?: typeof React.ReactNode;
         };
         /**
          * Generic context menu provider

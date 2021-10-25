@@ -1,0 +1,18 @@
+{
+  "name": "spicetify-cli-docs",
+  "version": "2.7.1",
+  "description": "Documentation for spicetify-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhas/spicetify-cli.git"
+  },
+  "author": "khanhas",
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/khanhas/spicetify-cli/issues"
+  },
+  "homepage": "https://github.com/khanhas/spicetify-cli#readme",
+  "devDependencies": {
+    "typedoc": "^0.22.7"
+  }
+}
