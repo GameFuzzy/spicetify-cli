@@ -27,7 +27,7 @@ jobs:
 
       - uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: './docs/build'
+          publish-dir: './build'
           deploy-message: "Prod deploy v${{ github.ref }}"
           production-deploy: true
         env:
