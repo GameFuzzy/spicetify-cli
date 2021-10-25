@@ -24,10 +24,11 @@ jobs:
       
       - run: cd docs
       - run: npm install
+      - run: npm run build
 
       - uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: './build'
+          publish-dir: './docs/build'
           deploy-message: "Prod deploy v${{ github.ref }}"
           production-deploy: true
         env:
