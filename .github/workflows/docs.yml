@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: 'Install dependencies and build'
-        working-directory: ./app
+        working-directory: ./docs
         run: |
           npm install
           npm run build
